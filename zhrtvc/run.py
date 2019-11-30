@@ -106,7 +106,7 @@ def run_abspath_train_txt():
 
 def run_embed_sim():
     import shutil
-    from tools import get_refs, get_speakers
+    from tools.enc_analyzer import get_refs, get_speakers
     import collections as clt
     import numpy as np
     from sklearn.metrics.pairwise import cosine_similarity, pairwise_distances
@@ -156,7 +156,7 @@ def run_embed_sim():
 def run_get_speakers():
     import shutil
     import numpy as np
-    from tools import get_speakers
+    from tools.enc_analyzer import get_speakers
     embed_dir = Path(r'E:\data\stcmds\SV2TTS\synthesizer\embeds')
     ref_dir = Path(r'E:\data\stcmds\refs')
     fpaths = list(ref_dir.glob('*'))
@@ -178,7 +178,7 @@ def run_get_speakers():
 
 def run_mel_strip():
     import numpy as np
-    from tools import find_endpoint, find_silences
+    from tools.spec_processor import find_endpoint, find_silences
     from synthesizer.audio import inv_mel_spectrogram, save_wav
     from synthesizer.hparams import hparams
     from matplotlib import pyplot as plt
